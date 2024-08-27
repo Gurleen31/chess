@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chessboard</title>
+
+</head>
+
+<body>
+
+  <script>
+
+    // Function to append a string to the document body
+
+    function print(data) {
+
+      const element = document.createElement('div');
+
+      element.innerHTML = data;
+
+      document.body.appendChild(element);
+
+    }
+
+
+
+    // Function to create a break element
+
+    function newLine() {
+
+      print('<br>');
+
+    }
+
+
+
+    // Variable to define the size of the chessboard
+
+    const board_size = 8; // You can change this value for different sizes
+
+
+
+    // Function to create the chessboard pattern
+
+    function createChessboard(size) {
+
+      let board = '';
+
+       
+
+      for (let row = 0; row < size; row++) {
+
+        let rowPattern = '';
+
+        for (let col = 0; col < size; col++) {
+
+          if ((row + col) % 2 === 0) {
+
+            rowPattern += '*';
+
+          } else {
+
+            rowPattern += '#';
+
+          }
+
+        }
+
+        board += rowPattern + '<br>';
+
+      }
+
+       
+
+      print(board);
+
+    }
+
+
+
+    // Create the chessboard
+
+    createChessboard(board_size);
+
+  </script>
+
+</body>
+
+</html>
